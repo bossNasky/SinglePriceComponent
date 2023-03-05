@@ -1,9 +1,10 @@
 :root {
-  --clr-primary-500: hsl(179, 65%, 17%);
-  --clr-primary-400: hsl(179, 62%, 43%);
+  --clr-primary-500: hsl(179, 62%, 43%);
+  --clr-primary-400: hsla(179, 62%, 43%, 0.699);
   --clr-primary-300: hsl(71, 73%, 54%);
-  --clr-neutral-400: hsl(204, 43%, 93%);
-  --clr-neutral-300: hsl(218, 22%, 67%);
+  --clr-neutral-400: hsl(0, 100%, 100%);
+  --clr-neutral-300: hsl(204, 43%, 93%);
+  --clr-neutral-200: hsl(218, 22%, 67%);
 }
 
 *,
@@ -17,4 +18,131 @@
 body {
   font-weight: 400;
   font-family: "Karla", sans-serif;
+}
+
+.main {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: var(--clr-neutral-300);
+}
+
+.wrapper {
+  --width: 50rem;
+  max-width: var(--width);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.margin-top-small {
+  margin-top: 1.5rem;
+}
+
+/* Typography */
+
+.heading__primary {
+  font-size: 1.35rem;
+  color: var(--clr-primary-500);
+}
+
+.heading__secondary {
+  font-size: 1.125rem;
+  color: var(--clr-neutral-400);
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--clr-primary-300);
+}
+
+.description {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--clr-neutral-200);
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.card > * {
+  padding: 2rem 3rem;
+}
+
+.introduction {
+  grid-column: 1/-1;
+  background-color: var(--clr-neutral-400);
+}
+
+.subscription {
+  background-color: var(--clr-primary-500);
+}
+
+.subscription__price {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.subscription__price strong {
+  font-size: 2rem;
+  color: var(--clr-neutral-400);
+}
+
+.subscription__price span {
+  color: var(--clr-neutral-300);
+}
+
+.subscription__additional {
+  color: var(--clr-neutral-300);
+}
+
+.why-us {
+  background-color: var(--clr-primary-400);
+}
+
+.why-us__list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.why-us__item {
+  font-size: 0.875rem;
+  color: var(--clr-neutral-300);
+}
+
+/* Btn */
+
+.btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn--sign {
+  width: 100%;
+  padding: 1rem;
+  font-weight: 700;
+  font-size: 1.105rem;
+  color: var(--clr-neutral-400);
+  border-radius: 6px;
+  background-color: var(--clr-primary-300);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 48rem) {
+  .wrapper {
+    --width: 30rem;
+  }
+  .card {
+    grid-template-columns: 1fr;
+  }
 }
